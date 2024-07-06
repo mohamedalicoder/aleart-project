@@ -1,0 +1,21 @@
+$errorBg:rgb(192 29 29 / 15%);
+$errorColor:#ef8d8dfa;
+.alert-wrapper {
+border: 2px dotted teal;
+margin-bottom: 20px;
+padding: 20px;
+background-color:$errorBg ;
+color: $errorColor;
+}
+
+.alert-2{
+    border: 2px dotted yellowgreen;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+.titles{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
