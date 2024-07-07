@@ -2,12 +2,13 @@ import './index.scss';
 
 import { ReactElement, ReactNode } from 'react';
 import { X } from 'lucide-react';
+import { alertTypes } from '../../../types';
 
 interface IProps {
   title: string;
   icon: ReactNode; // Change icon type to ComponentType
   description: string;
-  type?: string; // Add type prop to accept custom type
+  type?: alertTypes; // Add type prop to accept custom type
 }
 const Alert = ({
   title,
