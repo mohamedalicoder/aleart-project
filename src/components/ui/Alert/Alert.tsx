@@ -1,31 +1,36 @@
-import "./index.scss";
+import './index.scss';
 
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { X } from 'lucide-react';
 
 interface IProps {
   title: string;
-  icon: React.ComponentType; // Change icon type to ComponentType
+  icon: ReactNode; // Change icon type to ComponentType
   description: string;
-  styles?: string; // Add styles prop to accept custom styles
+  type?: string; // Add type prop to accept custom type
 }
-const Alert = ({ title, description, icon: Icon,styles }: IProps): ReactElement => { // Rename icon to Icon
+const Alert = ({
+  title,
+  description,
+  icon,
+  type,
+}: IProps): ReactElement => {
+  // Rename icon to Icon
   return (
-    <div  className={styles}>
-      <div className="titles">
-        <div style={{display:"flex" , justifyContent:"space-between" , alignItems:"center" , width:"120px"}}>
-        <Icon /> {/* Use Icon as a component */}
-        <h4>{title}</h4>
+    <div className={type}>
+      <div className='alert-header'>
+        <div className='title'>
+          <span>
+            {icon} {/* Use Icon as a component */}
+          </span>
+          <h4>{title}</h4>
         </div>
-     
-      <span>
-      <X />
-      </span>
+        <X className='close' size={25} />
       </div>
-     
+
       <p>{description}</p>
     </div>
   );
-}
+};
 
-export default Alert
+export default Alert;
